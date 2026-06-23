@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rolando Martínez Maldonado - CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0f172a;       /* Deep slate navy */
+      --accent: #4f46e5;        /* Premium indigo */
+      --accent-hover: #4338ca;
+      --text-main: #334155;     /* Slate grey body text */
+      --text-muted: #64748b;    /* Muted grey */
+      --bg: #f8fafc;            /* Soft off-white */
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Print/Download Button */
+    .actions-bar {
+      width: 100%;
+      max-width: 820px;
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 20px;
+    }
+
+    .btn-print {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
+      transition: all 0.2s ease;
+    }
+
+    .btn-print:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 8px -1px rgba(79, 70, 229, 0.3);
+    }
+
+    /* Main CV Page container simulating A4/Letter */
+    .cv-page {
+      width: 100%;
+      max-width: 820px;
+      min-height: 1060px; /* Standard Letter proportion */
+      background: var(--card-bg);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+      border-radius: 12px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Header styling */
+    .cv-header {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 20px;
+      margin-bottom: 25px;
+    }
+
+    .header-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .name-title h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.025em;
+      text-transform: uppercase;
+    }
+
+    .name-title p {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 4px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* Contact details row */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 8px 16px;
+      font-size: 12.5px;
+      color: var(--text-muted);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-item a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .contact-item a:hover {
+      color: var(--accent);
+    }
+
+    .contact-item svg {
+      width: 14px;
+      height: 14px;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* Main Two-Column Layout */
+    .cv-content {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr;
+      gap: 30px;
+      flex-grow: 1;
+    }
+
+    /* Column Typography */
+    h2.section-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+    }
+
+    .section {
+      margin-bottom: 25px;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Left Column Content (Profile, Experience, Projects) */
+    .summary-text {
+      font-size: 13px;
+      color: var(--text-main);
+      text-align: justify;
+      margin-bottom: 20px;
+    }
+
+    /* Job/Project Entries */
+    .entry {
+      margin-bottom: 18px;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .entry-title {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .entry-company {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    .entry-date {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .entry-bullets {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .entry-bullets li {
+      font-size: 12px;
+      position: relative;
+      padding-left: 14px;
+      margin-bottom: 4px;
+      color: var(--text-main);
+    }
+
+    .entry-bullets li::before {
+      content: "•";
+      color: var(--accent);
+      position: absolute;
+      left: 2px;
+      font-weight: bold;
+    }
+
+    /* Right Column Content (Skills, Education, Languages) */
+    .skills-block {
+      margin-bottom: 15px;
+    }
+
+    .skills-category {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .skill-tag {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      font-weight: 500;
+    }
+
+    .skill-tag.learning {
+      border-color: rgba(79, 70, 229, 0.3);
+      color: var(--accent);
+      background-color: rgba(79, 70, 229, 0.03);
+    }
+
+    /* Education Item */
+    .edu-item {
+      margin-bottom: 12px;
+    }
+
+    .edu-degree {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .edu-school {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .edu-date {
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 500;
+      margin-top: 1px;
+    }
+
+    /* Certification Item */
+    .cert-item {
+      font-size: 12px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .cert-item::before {
+      content: "→";
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background-color: #ffffff;
+        padding: 0;
+        margin: 0;
+      }
+
+      .actions-bar {
+        display: none;
+      }
+
+      .cv-page {
+        box-shadow: none;
+        padding: 0;
+        border-radius: 0;
+        width: 100%;
+        max-width: 100%;
+        min-height: auto;
+      }
+
+      /* Adjust printer behavior */
+      @page {
+        size: letter;
+        margin: 1.5cm;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Actions Bar (Hidden when printing) -->
+  <div class="actions-bar">
+    <button class="btn-print" onclick="window.print()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+      </svg>
+      Print / Save as PDF
+    </button>
+  </div>
+
+  <!-- CV Sheet -->
+  <div class="cv-page">
+    
+    <!-- Header -->
+    <header class="cv-header">
+      <div class="header-main">
+        <div class="name-title">
+          <h1>Rolando Martínez Maldonado</h1>
+          <p>Systems Engineer & Aspiring Data Engineer</p>
+        </div>
+      </div>
+      
+      <!-- Contact Info Grid -->
+      <div class="contact-grid">
+        <div class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+          </svg>
+          Querétaro, Qro. Mexico
+        </div>
+        <div class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.387a12.035 12.035 0 0 1-7.108-7.108c-.155-.44.01-1.29.387-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+          </svg>
+          +52 744 575 6384
+        </div>
+        <div class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+          </svg>
+          <a href="mailto:mm1138032@gmail.com">mm1138032@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+          </svg>
+          <a href="https://www.linkedin.com/public-profile/settings/?trk=d_flagship3_profile_self_view_public_profile&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3Bnh2yP8N8Rmm5ZCd%2F62DD7g%3D%3D" target="_blank">LinkedIn Profile</a>
+        </div>
+        <div class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+          </svg>
+          <a href="https://github.com/Rolssmtz" target="_blank">github.com/Rolssmtz</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Two Column Layout -->
+    <div class="cv-content">
+      
+      <!-- Left / Main Column -->
+      <div class="col-main">
+        
+        <!-- Summary Section -->
+        <section class="section">
+          <h2 class="section-title">Professional Summary</h2>
+          <p class="summary-text">
+            Systems Engineer with over 8 years of technical experience in custom software development, database administration, and systems support. Proven track record of building and deploying innovative, production-ready applications, including a custom workflow and teamwork orchestration platform for contractors in Victoria, BC, and a comprehensive enterprise system for transportation fleet management in Querétaro, Mexico.
+          </p>
+          <p class="summary-text">
+            Currently transitioning into **Data Engineering**, leveraging strong foundational software engineering principles, SQL expertise, and advanced **Agentic AI coding tools** (Claude, Antigravity) to design, optimize, and automate pipelines. A rapid and agile learner committed to implementing industry best practices—including writing daily unit tests—and eager to master Scala, Apache Spark, and AWS cloud databases to deliver scalable metrics for Opensignal.
+          </p>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="section">
+          <h2 class="section-title">Professional Experience</h2>
+          
+          <div class="entry">
+            <div class="entry-header">
+              <div>
+                <span class="entry-title">Independent Software Developer</span>
+                <span class="entry-company">| Victoria, BC (Remote)</span>
+              </div>
+              <span class="entry-date">Jan 2024 – Present</span>
+            </div>
+            <ul class="entry-bullets">
+              <li>**Contractor Operations & Teamwork App:** Designed and deployed a custom web/mobile application currently in active production use by painting contractor crews in Victoria, BC, to streamline job scheduling, crew communications, training/shared learning, and overall team performance.</li>
+              <li>**AI-Accelerated Workflow:** Integrated AI-based development assistants (Claude, Antigravity) to refactor code, accelerate debugging, and automate modular unit test generation.</li>
+              <li>**Data Management:** Modeled and implemented the relational database backend for client records, project quotes, and team performance metrics, ensuring optimal query execution times.</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <div>
+                <span class="entry-title">Systems Department Head / Developer</span>
+                <span class="entry-company">| C. Transportation Services</span>
+              </div>
+              <span class="entry-date">2018 – 2023</span>
+            </div>
+            <p style="font-size: 11.5px; color: var(--text-muted); font-weight: 500; margin-bottom: 6px; margin-left: 2px;">Querétaro, Qro. Mexico</p>
+            <ul class="entry-bullets">
+              <li>**Enterprise Management System:** Designed, built, and maintained the company’s core "Sistema Integral" (Comprehensive Management System), digitizing inventory control, driver assignments, and trip logs, which reduced administrative downtime by 30%.</li>
+              <li>**SQL Database Administration (MySQL):** Structured and maintained relational databases in MySQL, writing complex and optimized SQL queries to report key performance metrics to executive leadership.</li>
+              <li>**Root Cause Analysis:** Led the troubleshooting of data infrastructure failures, query bottlenecks, and network connectivity issues under high-pressure environments.</li>
+              <li>**Support Leadership:** Managed the internal IT support and customer service team, aligning system updates with direct user feedback.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Key Projects -->
+        <section class="section">
+          <h2 class="section-title">Key Projects</h2>
+          <div class="entry">
+            <div class="entry-header">
+              <span class="entry-title" style="font-size:12.5px;">Comprehensive Management System (MySQL & Desktop)</span>
+              <span class="entry-date">C. Transportation Services</span>
+            </div>
+            <ul class="entry-bullets">
+              <li>End-to-end logistics solution that centralized business operations into a single administration and data auditing dashboard.</li>
+            </ul>
+          </div>
+          <div class="entry" style="margin-top: 10px;">
+            <div class="entry-header">
+              <span class="entry-title" style="font-size:12.5px;">Victoria Paint Ops Platform (Relational Web App)</span>
+              <span class="entry-date">Independent Project</span>
+            </div>
+            <ul class="entry-bullets">
+              <li>Deployed active software focused on facilitating communication and continuous technical training/improvement for professional painting crews.</li>
+            </ul>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Right Column (Sidebar) -->
+      <div class="col-side">
+        
+        <!-- Skills Section -->
+        <section class="section">
+          <h2 class="section-title">Core Skills</h2>
+          
+          <div class="skills-block">
+            <div class="skills-category">Languages</div>
+            <div class="skills-list">
+              <span class="skill-tag">SQL (MySQL)</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">HTML5 / CSS3</span>
+              <span class="skill-tag learning">Scala (Basic)</span>
+              <span class="skill-tag learning">Python (Basic)</span>
+            </div>
+          </div>
+
+          <div class="skills-block">
+            <div class="skills-category">Data & Cloud</div>
+            <div class="skills-list">
+              <span class="skill-tag">MySQL Database</span>
+              <span class="skill-tag">ETL Concepts</span>
+              <span class="skill-tag learning">Apache Spark</span>
+              <span class="skill-tag learning">AWS S3 & EC2</span>
+              <span class="skill-tag learning">AWS Athena / Redshift</span>
+              <span class="skill-tag learning">Apache Airflow</span>
+            </div>
+          </div>
+
+          <div class="skills-block">
+            <div class="skills-category">Methodologies</div>
+            <div class="skills-list">
+              <span class="skill-tag">Agentic AI Coding</span>
+              <span class="skill-tag">Git / GitHub</span>
+              <span class="skill-tag">Root Cause Analysis</span>
+              <span class="skill-tag">IT Technical Support</span>
+              <span class="skill-tag learning">Unit Testing (ScalaTest)</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="section">
+          <h2 class="section-title">Education</h2>
+          <div class="edu-item">
+            <div class="edu-degree">B.S. in Computer Systems Engineering</div>
+            <div class="edu-school">Universidad Politécnica de Querétaro</div>
+            <div class="edu-date">Graduated: 2015</div>
+          </div>
+        </section>
+
+        <!-- Certifications / Learning -->
+        <section class="section">
+          <h2 class="section-title">Certifications & Self-Study</h2>
+          <div class="cert-item">AWS Data Engineer Path</div>
+          <div class="cert-item">Functional Programming in Scala</div>
+          <div class="cert-item">AI-Assisted Development (Antigravity)</div>
+        </section>
+
+        <!-- Languages -->
+        <section class="section">
+          <h2 class="section-title">Languages</h2>
+          <div class="skills-list">
+            <span class="skill-tag">Spanish (Native)</span>
+            <span class="skill-tag">English (Professional/Technical)</span>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
