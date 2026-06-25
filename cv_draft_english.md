@@ -1,6 +1,6 @@
 # ROLANDO MARTÍNEZ MALDONADO
 **Systems Engineer & Aspiring Data Engineer**  
-Querétaro, Qro. Mexico | +52 744 575 6384 | mm1138032@gmail.com  
+Querétaro, Qro. Mexico | Contact on request  
 [LinkedIn Profile](https://www.linkedin.com/public-profile/settings/?trk=d_flagship3_profile_self_view_public_profile&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3Bnh2yP8N8Rmm5ZCd%2F62DD7g%3D%3D) | [GitHub Profile](https://github.com/Rolssmtz)
 
 ---

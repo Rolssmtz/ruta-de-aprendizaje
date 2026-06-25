@@ -1,6 +1,6 @@
 # ROLANDO MARTÍNEZ MALDONADO
 **Full-Stack Developer | Systems & IT Support Specialist**
-Querétaro, Mexico (Remote · available for US/Canada time zones) | +52 744 575 6384 | mm1138032@gmail.com
+Querétaro, Mexico (Remote · available for US/Canada time zones) · Contact on request
 [LinkedIn](https://www.linkedin.com/in/) · [GitHub](https://github.com/Rolssmtz)
 
 ---
