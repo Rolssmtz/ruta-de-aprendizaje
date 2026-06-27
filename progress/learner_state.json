@@ -1,14 +1,128 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-26T00:00:00.000Z",
+  "updatedAt": "2026-06-27T01:46:04.505Z",
   "learner": {
-    "name": "Rolando",
-    "goal": "Empleo remoto + Data Engineer"
+    "name": "Rolando Martínez Maldonado",
+    "goal": "Conseguir empleo remoto como Data Engineer dominando Scala, Apache Spark, SQL avanzado y AWS (S3, Athena, Redshift, EMR, Airflow)"
   },
-  "mastery": {},
+  "mastery": {
+    "javascript": 60,
+    "sql": 65,
+    "web_fundamentals": 60,
+    "it_support": 75,
+    "scala": 10,
+    "spark": 5,
+    "aws": 15,
+    "testing": 20,
+    "skill": 55
+  },
   "learningStyle": {
-    "evidence": []
+    "evidence": [
+      "Inmutabilidad en Scala: val vs var: El alumno ha demostrado comprensión de la inmutabilidad en Scala"
+    ],
+    "confidence": 0.1
   },
-  "history": [],
-  "nextReview": null
+  "history": [
+    {
+      "n": 1,
+      "topic": "Inmutabilidad en Scala: val vs var",
+      "topicId": "scala-basics",
+      "date": "2026-06-26T00:31:53.078Z",
+      "score": 63,
+      "overallEval": 25
+    },
+    {
+      "n": 2,
+      "topic": "Inmutabilidad en Scala: val vs var",
+      "topicId": "scala-basics",
+      "date": "2026-06-26T21:18:26.207Z",
+      "score": 68,
+      "overallEval": null
+    },
+    {
+      "n": 3,
+      "topic": "Inmutabilidad en Scala: val vs var",
+      "topicId": "scala-basics",
+      "date": "2026-06-26T21:18:37.246Z",
+      "score": 66,
+      "overallEval": null
+    },
+    {
+      "n": 4,
+      "topic": "Inmutabilidad en Scala: val vs var",
+      "topicId": "scala-basics",
+      "date": "2026-06-26T21:18:46.780Z",
+      "score": 66,
+      "overallEval": null
+    },
+    {
+      "n": 5,
+      "topic": "Inmutabilidad en Scala: val vs var",
+      "topicId": "scala-basics",
+      "date": "2026-06-26T23:18:02.128Z",
+      "score": 100,
+      "overallEval": 100
+    },
+    {
+      "n": 6,
+      "topic": "Inmutabilidad en Scala: val vs var",
+      "topicId": "scala-basics",
+      "date": "2026-06-26T23:24:05.663Z",
+      "score": 100,
+      "overallEval": 100
+    },
+    {
+      "n": 7,
+      "topic": "Inmutabilidad en Scala: val vs var",
+      "topicId": "scala-basics",
+      "date": "2026-06-27T01:46:02.667Z",
+      "score": 100,
+      "overallEval": 100
+    }
+  ],
+  "nextReview": {
+    "summary": "El alumno ha demostrado una excelente comprensión de la inmutabilidad en Scala, utilizando correctamente val y var según sea necesario. Sin embargo, es importante seguir practicando y explorando las características del lenguaje para reforzar los conocimientos.",
+    "focus": [
+      "Práctica adicional con ejercicios que involucren inmutabilidad",
+      "Exploración de casos de uso avanzados para val y var",
+      "Revisión de conceptos relacionados como la inmutabilidad en colecciones"
+    ],
+    "reviewHtml": "<div class=\"phase-content\"><h3>Repaso de Inmutabilidad en Scala</h3><p>La inmutabilidad es un concepto fundamental en Scala que se refiere a la incapacidad de cambiar el valor de una variable una vez que ha sido inicializada. <code>val</code> se utiliza para declarar variables inmutables, mientras que <code>var</code> se utiliza para variables mutables. Es crucial entender cuándo usar cada uno para escribir código eficiente y seguro.</p><pre class=\"code-block\">// Ejemplo de uso de val y var\nval nombre: String = \"Juan\"\nvar contador: Int = 0\ncontador += 1\nprintln(s\"El nombre es $nombre y el contador es $contador\")</pre></div>",
+    "assessment": [
+      {
+        "q": "¿Cuál es la principal diferencia entre <code>val</code> y <code>var</code> en Scala?",
+        "options": [
+          "val es mutable y var es inmutable",
+          "val es inmutable y var es mutable",
+          "Ambos son mutables",
+          "Ambos son inmutables"
+        ],
+        "correct": 1
+      },
+      {
+        "q": "¿Por qué es importante usar <code>val</code> para variables que no cambian?",
+        "options": [
+          "Para mejorar el rendimiento",
+          "Para reducir el uso de memoria",
+          "Para evitar errores por cambios no deseados",
+          "Para hacer el código más complejo"
+        ],
+        "correct": 2
+      },
+      {
+        "q": "¿Cuál es un beneficio de utilizar variables inmutables en el desarrollo de software?",
+        "options": [
+          "Facilita la depuración",
+          "Mejora la seguridad",
+          "Reduce la complejidad del código",
+          "Todas las anteriores"
+        ],
+        "correct": 3
+      }
+    ],
+    "topic": "Inmutabilidad en Scala: val vs var",
+    "topicId": "scala-basics",
+    "fromSession": 7,
+    "createdAt": "2026-06-27T01:46:04.505Z"
+  }
 }
