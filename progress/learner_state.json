@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-27T01:46:04.505Z",
+  "updatedAt": "2026-06-28T18:27:11.273Z",
   "learner": {
     "name": "Rolando Martínez Maldonado",
     "goal": "Conseguir empleo remoto como Data Engineer dominando Scala, Apache Spark, SQL avanzado y AWS (S3, Athena, Redshift, EMR, Airflow)"
@@ -14,13 +14,14 @@
     "spark": 5,
     "aws": 15,
     "testing": 20,
-    "skill": 55
+    "skill": 60
   },
   "learningStyle": {
     "evidence": [
-      "Inmutabilidad en Scala: val vs var: El alumno ha demostrado comprensión de la inmutabilidad en Scala"
+      "Inmutabilidad en Scala: val vs var: El alumno ha demostrado comprensión de la inmutabilidad en Scala",
+      "Colecciones: List, Map, Seq, Set y orden superior: El alumno ha demostrado una comprensión sólida de las colecciones y el uso de funciones de orden superior"
     ],
-    "confidence": 0.1
+    "confidence": 0.2
   },
   "history": [
     {
@@ -78,51 +79,59 @@
       "date": "2026-06-27T01:46:02.667Z",
       "score": 100,
       "overallEval": 100
+    },
+    {
+      "n": 8,
+      "topic": "Colecciones: List, Map, Seq, Set y orden superior",
+      "topicId": "scala-collections",
+      "date": "2026-06-28T18:27:09.271Z",
+      "score": 92,
+      "overallEval": 100
     }
   ],
   "nextReview": {
-    "summary": "El alumno ha demostrado una excelente comprensión de la inmutabilidad en Scala, utilizando correctamente val y var según sea necesario. Sin embargo, es importante seguir practicando y explorando las características del lenguaje para reforzar los conocimientos.",
+    "summary": "El alumno dominó el uso de colecciones y funciones de orden superior, pero puede mejorar en la aplicación de Set y Seq en escenarios específicos.",
     "focus": [
-      "Práctica adicional con ejercicios que involucren inmutabilidad",
-      "Exploración de casos de uso avanzados para val y var",
-      "Revisión de conceptos relacionados como la inmutabilidad en colecciones"
+      "Uso efectivo de Set para eliminar duplicados",
+      "Aplicación de Seq para procesar colecciones ordenadas",
+      "Integración de Map y filter para procesamiento de datos complejos"
     ],
-    "reviewHtml": "<div class=\"phase-content\"><h3>Repaso de Inmutabilidad en Scala</h3><p>La inmutabilidad es un concepto fundamental en Scala que se refiere a la incapacidad de cambiar el valor de una variable una vez que ha sido inicializada. <code>val</code> se utiliza para declarar variables inmutables, mientras que <code>var</code> se utiliza para variables mutables. Es crucial entender cuándo usar cada uno para escribir código eficiente y seguro.</p><pre class=\"code-block\">// Ejemplo de uso de val y var\nval nombre: String = \"Juan\"\nvar contador: Int = 0\ncontador += 1\nprintln(s\"El nombre es $nombre y el contador es $contador\")</pre></div>",
+    "reviewHtml": "<div class=\"phase-content\"><h3>Revisión de Colecciones y Funciones de Orden Superior</h3><p>En la sesión anterior, se trabajó con List, Map, Seq y Set. Es importante recordar que cada una de estas colecciones tiene sus propias ventajas y usos específicos. El uso de funciones de orden superior como filter, map y reduce es fundamental para el procesamiento eficiente de datos.</p><pre class=\"code-block\">// Ejemplo de uso de Set para eliminar duplicados\nlet miSet = new Set([1, 2, 2, 3, 4, 4, 5]);\nconsole.log(miSet); // Set { 1, 2, 3, 4, 5 }\n\n// Ejemplo de uso de Seq para procesar una colección ordenada\nlet miSeq = [1, 2, 3, 4, 5];\nmiSeq.forEach((elemento) => console.log(elemento)); // Imprime cada elemento en orden</pre></div>",
     "assessment": [
       {
-        "q": "¿Cuál es la principal diferencia entre <code>val</code> y <code>var</code> en Scala?",
+        "q": "¿Cuál es el propósito principal del uso de Set en el procesamiento de colecciones?",
         "options": [
-          "val es mutable y var es inmutable",
-          "val es inmutable y var es mutable",
-          "Ambos son mutables",
-          "Ambos son inmutables"
+          "Para ordenar los elementos",
+          "Para eliminar duplicados",
+          "Para convertir una lista en una secuencia",
+          "Para aplicar funciones de orden superior"
         ],
         "correct": 1
       },
       {
-        "q": "¿Por qué es importante usar <code>val</code> para variables que no cambian?",
+        "q": "¿Qué función de orden superior se utiliza comúnmente para transformar cada elemento de una colección?",
         "options": [
-          "Para mejorar el rendimiento",
-          "Para reducir el uso de memoria",
-          "Para evitar errores por cambios no deseados",
-          "Para hacer el código más complejo"
+          "filter",
+          "map",
+          "reduce",
+          "forEach"
         ],
-        "correct": 2
+        "correct": 1
       },
       {
-        "q": "¿Cuál es un beneficio de utilizar variables inmutables en el desarrollo de software?",
+        "q": "¿Cuál es la ventaja de utilizar Seq en el procesamiento de colecciones?",
         "options": [
-          "Facilita la depuración",
-          "Mejora la seguridad",
-          "Reduce la complejidad del código",
-          "Todas las anteriores"
+          "Permite la eliminación de duplicados",
+          "Ofrece una forma de procesar colecciones ordenadas",
+          "Es una forma de implementar funciones de orden superior",
+          "Es una colección que puede contener cualquier tipo de dato"
         ],
-        "correct": 3
+        "correct": 1
       }
     ],
-    "topic": "Inmutabilidad en Scala: val vs var",
-    "topicId": "scala-basics",
-    "fromSession": 7,
-    "createdAt": "2026-06-27T01:46:04.505Z"
+    "topic": "Colecciones: List, Map, Seq, Set y orden superior",
+    "topicId": "scala-collections",
+    "fromSession": 8,
+    "createdAt": "2026-06-28T18:27:11.273Z"
   }
 }
